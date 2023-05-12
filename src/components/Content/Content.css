@@ -1,0 +1,19 @@
+.ContentApp {
+    height: 700px;
+    display: flex;
+    max-width: 1374px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding-top: 100px;
+    justify-content: space-between;
+    gap: 150px;
+}
+
+.ContentColumn {
+    font-size: 20px;
+    padding: 16px 16px 10px;
+    flex: 1 1 0;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+}

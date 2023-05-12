@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.NavBar {
+    /*background-color: #3c6cd3;*/
+}
+
+@media (min-width: 1140px) {
+    .NavigationBar {
+        display: flex;
+        max-width: 1374px;
+        margin: 0 auto;
+        padding-top: 8px;
+        justify-content: center;
+    }
+}
+
+.NavBarItem {
+    padding: 16px 16px 10px;
+    flex: 1 1 0;
+    align-items: center;
+    text-align: center;
+}
+
+.NavBarItem:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.NavBarIcon {
+    /*css иконок*/
+}
+
+.NavBarText {
+
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 16px;
+    color: bisque;
+}
+
+.NavBarSearch {
+    padding-right: 5px;
+    text-align: right;
+    align-self: center;
+    padding-bottom: 5px;
+    flex: 1 1 0;
+
+}

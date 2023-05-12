@@ -1,0 +1,32 @@
+@media (min-width: 1140px) {
+    .Footer {
+        display: flex;
+        max-width: 1374px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        padding-top: 8px;
+        justify-content: center;
+    }
+}
+
+.FooterColumn {
+    padding: 16px 16px 10px;
+    flex: 1 1 0;
+    align-items: center;
+    text-align: center;
+}
+
+.FooterLine {
+    margin-top: 16px;
+    font-size: 20px;
+    color: rgb(155, 201, 197);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.FooterLine:hover {
+    cursor: pointer;
+    color: rgb(34, 199, 182);
+
+    opacity: 1;
+}
