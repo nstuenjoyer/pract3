@@ -1,8 +1,9 @@
 import NavBar from "./NavBar/NavBar";
+import HPcontent from "./HPcontent";
 import './Homepage.css';
 function Homepage() {
     return (<div><NavBar ></NavBar>
-        <div className="AboutUs"><h1>ЕГЭ/ОГЭ уже на носу?</h1> <p>Поможем подобрать репетитора для подготовки к экзаменам!</p></div>
+        <HPcontent></HPcontent>
     </div>);
 }
 export default Homepage;

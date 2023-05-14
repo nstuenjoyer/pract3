@@ -1,0 +1,55 @@
+.BoardList {
+    margin: 0 auto;
+    max-width: 1366px;
+    margin-top: 50px;
+    display: flex;
+    gap: 60px;
+    text-align: center;
+    height: 440px;
+}
+
+.Board {
+    background: linear-gradient(187.54deg, #00103365 10.95%, #0050e62f 100.42%);
+    border-radius: 10px;
+    flex: 1 1 0;
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+    transition: 0.5s;
+}
+
+.Board:hover {
+    background: linear-gradient(187.54deg, #b8010165 10.95%, #1404042f 100.42%);
+    transform: scale(1.1);
+}
+
+.navlink {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.BoardName {
+    border-radius: 10px;
+    background-color: rgb(68, 0, 255);
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+}
+
+a.text:active,
+a.text:hover,
+a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #c5f6ffd5;
+    font-family: sans-serif;
+}
+
+
+.Icon {
+
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 350px;
+    height: 350px;
+}
