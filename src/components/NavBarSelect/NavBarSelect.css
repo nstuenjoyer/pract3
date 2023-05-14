@@ -2,31 +2,33 @@
     box-sizing: border-box;
 }
 
-.NavBar {
+.NavBarSelect {
     /*background-color: #3c6cd3;*/
 }
 
 @media (min-width: 1140px) {
-    .NavigationBar {
+    .NavigationBarSelect {
         display: flex;
-        max-width: 1374px;
-        margin: 0 auto;
+        margin: 0px 20px 0px 150px;
         padding-top: 8px;
         justify-content: center;
     }
 }
 
-.NavBarItem {
-    padding: 16px 16px 10px;
+.NavBarSelectItem {
     flex: 1 1 0;
+    padding: 16px 16px 10px;
     align-items: center;
     text-align: center;
 }
 
-.NavBarItem:hover {
-    cursor: pointer;
-    opacity: 0.7;
+.ButtonInput {
+    margin-top: 10px;
+    text-align: center;
+
 }
+
+
 
 .NavBarIcon {
     /*css иконок*/
@@ -41,10 +43,9 @@
 }
 
 .NavBarSearch {
-    padding-right: 5px;
+    display: flex;
+    padding: 16px 16px 10px;
     text-align: right;
     align-self: center;
-    padding-bottom: 5px;
     flex: 1 1 0;
-
 }

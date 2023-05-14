@@ -8,14 +8,16 @@
 
 
 body {
-    background: linear-gradient(18deg, #05849b 35%, #7996F0 180%);
+    background: linear-gradient(187.54deg, #395ecf 10.95%, #5b76c5 100.42%);
+    min-height: 100vh;
+
 }
 
-.App {
+/* .App {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-}
+} */
 
 
 

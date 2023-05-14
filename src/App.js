@@ -1,12 +1,18 @@
-import NavBar from "./components/NavBar/NavBar";
-
+import NavBar from "./components/NavBarSelect/NavBarSelect";
+import Footer from "./components/footer/Footer"
 import Content from "./components/Content/Content";
+import Homepage from "./components/Homepage/Homapage";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <NavBar className="NavBarApp"></NavBar>
-      <Content ></Content>
-      <Footer className="FooterApp"></Footer>
+      <HashRouter>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+          </Routes>
+        </div>
+      </HashRouter>
     </div>
   );
 }

@@ -5,6 +5,7 @@
     margin: 0 auto;
     margin-bottom: 50px;
     padding-top: 100px;
+    flex-direction: column;
     justify-content: space-between;
     gap: 150px;
 }
