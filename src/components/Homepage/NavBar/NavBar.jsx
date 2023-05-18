@@ -5,7 +5,7 @@ function NavBar() {
     return (<div className="NavBar">
         <div className="NavigationBar">
             <div className="NavBarItem">
-                <NavLink exact to="/"><img className="Logo" src={logo} alt="" /></NavLink>
+                <NavLink to="/"><img className="Logo" src={logo} alt="" /></NavLink>
             </div>
 
         </div>

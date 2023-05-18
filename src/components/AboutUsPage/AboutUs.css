@@ -1,0 +1,134 @@
+.AboutUsPageInfo {
+    margin: 0 auto;
+    max-width: 1266px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+
+}
+
+.AboutUsH1 {
+    margin-top: 50px;
+    text-align: center;
+    text-shadow: 0px 0px 10px #559fff8f;
+    color: #c5f6ffd5;
+    font-family: sans-serif;
+}
+
+.Container1 {
+    flex: 2 0 0;
+    background-image: url("/public/img/2.png");
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+}
+
+.Container2 {
+    flex: 1 0 0;
+    position: relative;
+    background: linear-gradient(198.54deg, #b8010159 10.95%, #3e00cf0e 100.42%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+}
+
+.Container3 {
+    flex: 1 0 0;
+    position: relative;
+    background: linear-gradient(46.54deg, #b8010159 10.95%, #3e00cf0e 100.42%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+}
+
+.Container4 {
+    flex: 2 0 0;
+    background-image: url("/public/img/1.jpg");
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+}
+
+.FirstString {
+    display: flex;
+    gap: 20px;
+    height: 250px;
+}
+
+.SecondString {
+    display: flex;
+    height: 250px;
+    gap: 20px;
+}
+
+.BinNum {
+    font-size: 140px;
+    font-weight: 900;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: .8em;
+    margin-bottom: 20px;
+    color: #ff2e7e;
+
+}
+
+
+.AvgMark {
+    font-size: 30px;
+    max-width: 250px;
+    padding-left: 30px;
+    font-weight: 600;
+    color: rgb(255, 220, 245);
+}
+
+
+.CoolImg {
+    position: absolute;
+    top: auto;
+    top: 142px;
+    left: 250px;
+    right: auto;
+    height: 102px;
+    color: linear-gradient()
+}
+
+.Container3Name {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: sans-serif;
+    padding-left: 30px;
+    line-height: .8em;
+    margin-bottom: 20px;
+    color: #ff2e7e;
+    padding-top: 5px;
+}
+
+.ProgrammText {
+    font-size: 22px;
+    max-width: 280px;
+    padding-left: 30px;
+    font-weight: 600;
+    line-height: 1.1em;
+    color: rgb(255, 220, 245);
+}
+
+
+.BackToHome {
+    position: absolute;
+    width: 150px;
+    border-radius: 10px;
+    background-color: rgb(89, 0, 255);
+    margin-top: 20px;
+    right: calc(50% - 95px);
+    padding: 10px 20px 10px 20px;
+
+    align-self: center;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.BackToHome:hover {
+    background-color: #b801018e;
+}
+
+.ProgrammText {}

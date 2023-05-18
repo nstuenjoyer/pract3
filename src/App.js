@@ -1,8 +1,8 @@
-import NavBar from "./components/NavBarSelect/NavBarSelect";
-import Footer from "./components/footer/Footer"
-import Content from "./components/Content/Content";
+
 import Homepage from "./components/Homepage/Homapage";
+import AboutUs from "./components/AboutUsPage/AboutUs";
 import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import TutorPage from "./components/turorpage/TutorPage";
 function App() {
   return (
     <div className="App">
@@ -10,6 +10,9 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Homepage />} />
+            <Route path="/turots" element={<TutorPage />} />
+            <Route path="/reviews" element={<Homepage />} />
+            <Route path="/about" element={<AboutUs />} />
           </Routes>
         </div>
       </HashRouter>
