@@ -1,5 +1,5 @@
 .TutorItem {
-    height: 260px;
+    min-height: 260px;
     width: 800px;
     background-color: rgb(226, 237, 255);
     display: flex;
@@ -7,8 +7,15 @@
     box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.767);
 }
 
-.Tutorlist {
+.TutorListContent {
+    display: flex;
+    max-width: 1266px;
     margin: 0 auto;
+}
+
+.Tutorlist {
+    margin: 0 auto 0 50px;
+    margin-bottom: 50px;
     flex-direction: column;
     max-width: 1366px;
     margin-top: 50px;
@@ -18,10 +25,12 @@
 }
 
 .TutorImg {
+    background-color: black;
     height: 160px;
     width: 160px;
     margin-top: 3.5%;
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .TutorInfo {
@@ -29,10 +38,10 @@
     height: 90%;
     width: 70%;
     align-self: center;
-    margin-left: 20px;
+
     display: flex;
     flex-direction: column;
-    padding-left: 5px;
+    padding-left: 0px;
 
 }
 
@@ -41,9 +50,7 @@
     justify-content: space-between;
 }
 
-.TutorCost {
-    align-self: flex-end;
-}
+
 
 .TutorName {
     font-size: 30px;
@@ -53,17 +60,23 @@
     height: 25px;
     text-align: center;
     font-size: 25px;
-    margin-left: 8px;
+    margin-right: 8px;
     margin-top: 10px;
-    width: 25px;
-    background-color: aquamarine;
-    box-shadow: 0px 0px 5px aquamarine;
+
+    width: 50px;
+    background-color: rgb(52, 255, 143);
+    box-shadow: 0px 0px 5px rgb(70, 255, 193);
     border-radius: 2px;
 }
 
 .TutorCost {
+    align-self: flex-start;
+    font-size: 20px;
 
-    margin-top: auto;
+    color: rgb(59, 59, 59);
+    margin-right: -30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .TutorLesson {
