@@ -1,0 +1,48 @@
+.RevListContent {
+    display: flex;
+    max-width: 1266px;
+    margin: 30px auto;
+    gap: 30px;
+}
+
+
+.reviewList {
+
+    max-width: 600px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.ReviewItem {
+    background: rgb(226, 237, 255);
+    padding: 10px;
+    width: 600px;
+    border-radius: 3px;
+
+    box-shadow: 0px 0px 20px 1px #1b2f69;
+    transition: 0.5s;
+
+}
+
+.ReviewName {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.ReviewContent {
+    margin-top: 5px;
+
+}
+
+.Rev {
+    text-align: center;
+    margin-top: 15px;
+    color: #c5f6ffd5;
+    font-family: sans-serif;
+    font-size: 30px;
+    line-height: 1em;
+    font-weight: 900;
+}

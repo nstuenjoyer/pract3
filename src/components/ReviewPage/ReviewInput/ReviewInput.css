@@ -1,0 +1,28 @@
+.ReviewInput {
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    position: sticky;
+    flex-direction: column;
+    top: 104px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.767);
+    gap: 5px;
+    background-color: rgb(226, 237, 255);
+}
+
+.RevHead {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.buttonRev {
+
+    padding: 2px;
+    align-self: center;
+
+}
+
+.ReviewFieldInput {
+    resize: none;
+}

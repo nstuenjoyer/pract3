@@ -9,3 +9,11 @@
     margin-top: 20px;
     font-size: 18px
 }
+
+.NavBar {
+    z-index: 100;
+}
+
+.HPcontent {
+    z-index: 2;
+}

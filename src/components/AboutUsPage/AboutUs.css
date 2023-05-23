@@ -17,9 +17,17 @@
     font-family: sans-serif;
 }
 
+.NowTutors {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 70px;
+    font-weight: 600;
+    color: rgb(255, 220, 245);
+}
+
 .Container1 {
     flex: 2 0 0;
-    background-image: url("/public/img/2.png");
+    background: linear-gradient(160.54deg, #b8010159 10.95%, #3e00cf0e 100.42%);
     position: relative;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 1px #1b2f69;
@@ -43,7 +51,7 @@
 
 .Container4 {
     flex: 2 0 0;
-    background-image: url("/public/img/1.jpg");
+    background: linear-gradient(-40.54deg, #b8010159 10.95%, #3e00cf0e 100.42%);
     position: relative;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 1px #1b2f69;

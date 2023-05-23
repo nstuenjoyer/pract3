@@ -1,47 +1,91 @@
 import Tutor from "./Tutor";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./Tutor.css";
 
 import NavBarSelect from "../NavBarSelect/NavBarSelect";
 const TutorList = () => {
-    const [selectedSort, setSelectedSort] = useState();
+    const [tutors, setData] = useState([]);
+    const url = "http://localhost:2000";
+    const [selectedSort, setSelectedSort] = useState('None');
     const [options, setOptions] = useState({
         method: 'GET',
         mode: 'cors',
     })
+    const [tutorLeng, setTutorLeng] = useState(0);
+    const [outputTutors, setOutputTutors] = useState([])
+    const [currentmax, setCurrentmax] = useState(5)
+    useEffect(() => {
+        document.addEventListener('scroll', scrollHandler)
+        return function () {
+            document.removeEventListener('scroll', scrollHandler)
+        };
+    }, [])
+
+    const scrollHandler = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 50) {
+            console.log('+')
+            setCurrentmax(currentmax + 5)
+            console.log(currentmax)
+        }
+
+    }
+    const drawTutors = () => {
+
+        return (outputTutors.map(tutor => <Tutor tutor={tutor} key={tutor.idtutor}></Tutor>).slice(0, currentmax))
+    }
+    const selectTutors = (lesson, format, maxcost) => {
+        let kostil = [];
+        if (lesson === 'all') {
+            setOutputTutors(tutors);
+        }
+        else {
+            tutors.forEach(tutor => {
+                if (tutor.tutor_lesson === lesson && tutor[format] === 1 && tutor.tutor_cost < maxcost) {
+                    console.log("+")
+                    kostil = [...kostil, tutor];
+                    console.log(kostil)
+                }
+            });
+            setOutputTutors(kostil);
+        }
+    }
+
+    const sortedTutors = useMemo(() => {
+        switch (selectedSort) {
+            case 'None': {
+                break;
+            }
+            case 'tutor_surnameUp': {
+                setOutputTutors([...outputTutors].sort((a, b) => a.tutor_surname < b.tutor_surname ? -1 : 1))
+                break;
+            }
+            case 'tutor_surnameDown': {
+                setOutputTutors([...outputTutors].sort((b, a) => a.tutor_surname < b.tutor_surname ? -1 : 1))
+                break;
+            }
+            case 'tutor_costUp': {
+                setOutputTutors([...outputTutors].sort((a, b) => a.tutor_cost < b.tutor_cost ? -1 : 1))
+                break;
+            }
+            case 'tutor_costDown': {
+                setOutputTutors([...outputTutors].sort((b, a) => a.tutor_cost < b.tutor_cost ? -1 : 1))
+                break;
+            }
+            case 'tutor_markUp': {
+                setOutputTutors([...outputTutors].sort((a, b) => a.tutor_mark < b.tutor_mark ? -1 : 1))
+                break;
+            }
+            case 'tutor_markDown': {
+                setOutputTutors([...outputTutors].sort((b, a) => a.tutor_mark < b.tutor_mark ? -1 : 1))
+                break;
+            }
+        }
+    }, [selectedSort, tutors])
 
     const sortPosts = (sort) => {
         console.log(sort);
         setSelectedSort(sort);
-        switch (sort) {
-            case 'tutor_surnameUp': {
-                setData([...tutors].sort((a, b) => a.tutor_surname < b.tutor_surname ? -1 : 1))
-                break;
-            }
-            case 'tutor_surnameDown': {
-                setData([...tutors].sort((b, a) => a.tutor_surname < b.tutor_surname ? -1 : 1))
-                break;
-            }
-            case 'tutor_costUp': {
-                setData([...tutors].sort((a, b) => a.tutor_cost < b.tutor_cost ? -1 : 1))
-                break;
-            }
-            case 'tutor_costDown': {
-                setData([...tutors].sort((b, a) => a.tutor_cost < b.tutor_cost ? -1 : 1))
-                break;
-            }
-            case 'tutor_markUp': {
-                setData([...tutors].sort((a, b) => a.tutor_mark < b.tutor_mark ? -1 : 1))
-                break;
-            }
-            case 'tutor_markDown': {
-                setData([...tutors].sort((b, a) => a.tutor_mark < b.tutor_mark ? -1 : 1))
-                break;
-            }
-        }
     }
-    const [tutors, setData] = useState([]);
-    const url = "http://localhost:2000";
 
     useEffect(() => {
         const fetchData = () => {
@@ -50,9 +94,12 @@ const TutorList = () => {
                 .then(response => response.json())
                 .then(data => {
                     setData(data)
-                    console.log(data);
+                    setOutputTutors(data);
+                    setTutorLeng(data.length);
+
                 })
                 .catch(error => console.log('Ошибка запроса', error));
+
         }
         fetchData();
 
@@ -63,7 +110,7 @@ const TutorList = () => {
     return (
         <div className="TutorListContent">
             <NavBarSelect
-
+                ChangeSett={selectTutors}
                 value={selectedSort}
                 onChangeSort={sortPosts}
                 defaultvalue="Сортировка по: " options={[
@@ -77,11 +124,11 @@ const TutorList = () => {
             <div className="Tutorlist">
 
                 {
-                    tutors.length !== 0
+                    outputTutors.length !== 0
                         ?
-                        tutors.map(tutor => <Tutor tutor={tutor} key={tutor.idtutor}></Tutor>)
+                        drawTutors()
                         :
-                        <div>К сожалению по вашему условию никого нет</div>
+                        <div className="Unlucky">К сожалению по вашему условию никого нет</div>
 
                 }
             </div>

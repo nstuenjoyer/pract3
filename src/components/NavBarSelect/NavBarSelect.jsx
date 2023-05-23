@@ -2,8 +2,10 @@ import { useState } from 'react';
 import '../NavBarSelect/NavBarSelect.css';
 import { NavLink } from 'react-router-dom';
 
-const NavBarSelect = ({ options, defaultvalue, value, onChangeSort }) => {
+const NavBarSelect = ({ options, defaultvalue, value, onChangeSort, ChangeSett }) => {
     const [maxcost, setmaxcost] = useState(500);
+    const [lesson, setLesson] = useState('Английский язык')
+    const [format, setFormat] = useState('is_distance')
 
     return (
         <div className="NavBarSelect">
@@ -11,28 +13,29 @@ const NavBarSelect = ({ options, defaultvalue, value, onChangeSort }) => {
 
                 <div className="NavBarSelectItem">
                     <div className='NavBarIcon'>Предмет</div>
-                    <div className="NavBarText"><select name="TypePredmet" id="TypePredmet" >
-                        <option value="" disabled selected>Выберите предмет</option>
-                        <option>Английский язык</option>
-                        <option>Биология</option>
-                        <option>География</option>
-                        <option>История</option>
-                        <option>Литература</option>
-                        <option>Математика</option>
-                        <option>Обществознание</option>
-                        <option>Русский язык</option>
-                        <option>Физика</option>
-                        <option>Химия</option>
+                    <div className="NavBarText"><select onChange={event => setLesson(event.target.value)} name="TypePredmet" id="TypePredmet" >
+
+                        <option value="Английский язык">Английский язык</option>
+                        <option value="Биология">Биология</option>
+                        <option value="География">География</option>
+                        <option value="История">История</option>
+                        <option value="История">Информатика</option>
+                        <option value="Литература">Литература</option>
+                        <option value="Математика">Математика</option>
+                        <option value="Обществознание">Обществознание</option>
+                        <option value="Русский язык">Русский язык</option>
+                        <option value="Физика">Физика</option>
+                        <option value="Химия">Химия</option>
                     </select></div >
                 </div>
                 <div className="NavBarSelectItem">
                     <div className='NavBarIcon'>Формат занятий</div>
-                    <div className="NavBarText"><select name="TypeZanatie" id="TypeZanatie">
-                        <option value="" disabled selected>Выберите формат занятия</option>
-                        <option>Дистанционно</option>
-                        <option>У репетитора</option>
-                        <option>У ученика</option>
-                    </select></div >
+                    <div className="NavBarText"><select onChange={event => setFormat(event.target.value)} name="TypeZanatie" id="TypeZanatie">
+
+                        <option value="is_distance">Дистанционно</option>
+                        <option value="is_tutorhome">У репетитора</option>
+                        <option value="is_home">У ученика</option>
+                    </select></div>
                 </div>
                 <div className="NavBarSelectItem">
                     <div className='NavBarIcon'>Максимальная стоимость</div>
@@ -44,7 +47,8 @@ const NavBarSelect = ({ options, defaultvalue, value, onChangeSort }) => {
                         </div>
                     </div >
                 </div>
-                <div className="NavBarSelectItem"><button className='ButtonInput'>Принять</button></div>
+                <div className="NavBarSelectItem"><button onClick={event => { ChangeSett(lesson, format, maxcost) }} className='ButtonInput'>Принять</button></div>
+                <div className="NavBarSelectItem"><button onClick={event => { ChangeSett('all', 'all', 6000) }} className='ButtonInput'>Показать всех</button></div>
                 <div className="NavBarSearch">
                     <div className="NavBarText">
 

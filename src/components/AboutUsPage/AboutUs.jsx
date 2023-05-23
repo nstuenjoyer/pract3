@@ -8,7 +8,9 @@ function AboutUs() {
         <div className='AboutUsPageInfo'>
 
             <div className="FirstString">
-                <div className='Container1'>В данный момент через наш сайт работают n первоклассных репетиторов</div>
+                <div className='Container1'>
+                    <p className='NowTutors'>В данный момент через наш сайт работают n первоклассных репетиторов</p>
+                </div>
 
                 <div className='Container2'>
                     <p className='BinNum'>87</p>
@@ -23,7 +25,7 @@ function AboutUs() {
 
                 </div>
 
-                <div className='Container4'>Тут будет список жесткий типа средний балл у нас и в среднем по предмету емае</div>
+                <div className='Container4'> <p className='NowTutors'>Тут могла быть ваша реклама</p></div>
             </div>
 
 

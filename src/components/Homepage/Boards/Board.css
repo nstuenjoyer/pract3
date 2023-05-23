@@ -5,20 +5,20 @@
     display: flex;
     gap: 60px;
     text-align: center;
-    justify-content: space-between;
-    height: 440px;
     flex-wrap: wrap;
 }
 
 .Board {
     background: linear-gradient(187.54deg, #00103365 10.95%, #0050e62f 100.42%);
+    width: 415px;
     border-radius: 10px;
-    flex: 1 1 0;
+
     box-shadow: 0px 0px 20px 1px #1b2f69;
     transition: 0.5s;
 
-
 }
+
+
 
 .Board:hover {
     background: linear-gradient(187.54deg, #b8010165 10.95%, #1404042f 100.42%);
@@ -38,6 +38,7 @@
     background-color: rgb(68, 0, 255);
     padding: 10px 20px 10px 20px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 a.text:active,

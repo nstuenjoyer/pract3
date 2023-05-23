@@ -2,7 +2,9 @@
     padding: 0 72px;
     margin: 0 auto;
     max-width: 1366px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .NavigationBar {
@@ -10,6 +12,13 @@
     top: 0;
 
     background-color: rgb(255, 255, 255);
+}
+
+.login {
+    color: black;
+    text-decoration: underline;
+    vertical-align: bottom;
+
 }
 
 .Logo {
