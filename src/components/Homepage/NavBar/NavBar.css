@@ -14,6 +14,10 @@
     background-color: rgb(255, 255, 255);
 }
 
+.LoginExit {
+    margin-left: 5px;
+}
+
 .login {
     color: black;
     text-decoration: underline;

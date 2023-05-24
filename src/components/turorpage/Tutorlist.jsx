@@ -5,7 +5,7 @@ import "./Tutor.css";
 import NavBarSelect from "../NavBarSelect/NavBarSelect";
 const TutorList = () => {
     const [tutors, setData] = useState([]);
-    const url = "http://localhost:2000";
+    const url = "http://217.71.129.139:5534";
     const [selectedSort, setSelectedSort] = useState('None');
     const [options, setOptions] = useState({
         method: 'GET',
@@ -23,9 +23,9 @@ const TutorList = () => {
 
     const scrollHandler = (e) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 50) {
-            console.log('+')
+
             setCurrentmax(currentmax + 5)
-            console.log(currentmax)
+
         }
 
     }
@@ -37,13 +37,14 @@ const TutorList = () => {
         let kostil = [];
         if (lesson === 'all') {
             setOutputTutors(tutors);
+            setCurrentmax(5)
         }
         else {
             tutors.forEach(tutor => {
                 if (tutor.tutor_lesson === lesson && tutor[format] === 1 && tutor.tutor_cost < maxcost) {
-                    console.log("+")
+
                     kostil = [...kostil, tutor];
-                    console.log(kostil)
+
                 }
             });
             setOutputTutors(kostil);
@@ -83,7 +84,7 @@ const TutorList = () => {
     }, [selectedSort, tutors])
 
     const sortPosts = (sort) => {
-        console.log(sort);
+
         setSelectedSort(sort);
     }
 

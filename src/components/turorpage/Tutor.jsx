@@ -47,9 +47,9 @@ const Tutor = (props) => {
                 <div className="TutorAbout">
                     <h3 className="TutorH3">О себе</h3>
                     Тут чтото о чупике этом я не могу будет немого инфы где учился кто что напиишет но я не могу потдумаь для такого количества плашечки эти емае</div>
-                <div className="TutorCost">{props.tutor.tutor_cost} руб/час</div>
+                <div className="TutorCost">{props.tutor.tutor_cost} руб/час | Контактный номер:{props.tutor.contact_info}</div>
             </div>
-            <div className="TutorMark">{props.tutor.tutor_mark}</div>
+            <div className="TutorMark">{props.tutor.tutor_mark} </div>
         </div>
 
     );

@@ -9,8 +9,12 @@ const ReviewList = () => {
         method: 'GET',
         mode: 'cors',
     })
-    const url = "http://localhost:2001";
+    const [isdatasend, setIsDataSend] = useState(0);
+    const url = "http://217.71.129.139:5538";
     const [reviews, setData] = useState([]);
+    const UserSendData = () => {
+        setIsDataSend(isdatasend + 1);
+    }
     useEffect(() => {
         const fetchData = () => {
 
@@ -24,7 +28,7 @@ const ReviewList = () => {
         }
         fetchData();
 
-    }, [options]);
+    }, [isdatasend]);
     const [currentmax, setCurrentmax] = useState(10)
     const scrollHandler = (e) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 50) {
@@ -35,7 +39,7 @@ const ReviewList = () => {
     }
     const drawRev = () => {
 
-        return (reviews.map(review => <Review review={review} key={review.idreviews}></Review>).slice(0, currentmax))
+        return (reviews.map(review => <Review ChangeData={UserSendData} review={review} key={review.idreviews}></Review>).slice(0, currentmax))
     }
     useEffect(() => {
         document.addEventListener('scroll', scrollHandler)
@@ -45,7 +49,7 @@ const ReviewList = () => {
     }, [])
     return (
         <div className="RevListContent">
-            <ReviewInput></ReviewInput>
+            <ReviewInput ChangeData={UserSendData}></ReviewInput>
             <div className="reviewList">
                 {
                     reviews.length !== 0

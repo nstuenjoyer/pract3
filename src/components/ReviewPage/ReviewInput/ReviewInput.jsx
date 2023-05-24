@@ -1,6 +1,7 @@
 import './ReviewInput.css';
 import { useEffect, useState } from 'react';
-const ReviewInput = () => {
+import { NavLink } from 'react-router-dom';
+const ReviewInput = ({ ChangeData }) => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('')
     const [review, setRev] = useState('')
@@ -50,7 +51,7 @@ const ReviewInput = () => {
         }
 
     }
-    const url = "http://localhost:2001";
+    const url = "http://217.71.129.139:5538";
     const fetchData = () => {
 
         fetch(url, {
@@ -104,7 +105,15 @@ const ReviewInput = () => {
                 <div className="UserRev">Ваш отзыв</div>
                 {(reviewdirty && reviewerr) && <div style={{ color: 'red' }}>{reviewerr}</div>}
                 <textarea onChange={e => revHandler(e)} value={review} onBlur={e => blurHandler(e)} type="text" className='ReviewFieldInput' maxLength={325} name="Rev" id="Rev" placeholder='Введите отзыв' />
-                <button type="submit" disabled={!isformValid} className='buttonRev' onClick={event => SendReview(name, surname, review)}>отправить</button>
+                <button type="submit" disabled={!isformValid} className='buttonRev' onClick={event => {
+                    SendReview(name, surname, review);
+                    ChangeData(1);
+                }}>отправить</button>
+                <NavLink exact to="/">
+                    <div className="RevHome">
+                        Назад на главную
+                    </div>
+                </NavLink>
             </div>
         </div>
     )

@@ -1,10 +1,11 @@
 import ReviewList from "./ReviewList";
 import NavBar from "../Homepage/NavBar/NavBar";
+import { useContext } from "react";
 function RewiewPage() {
 
     return (
         <div className="Reviewpage">
-            <NavBar ></NavBar>
+
             <div className="Rev">Отзывы</div>
             <div className="ReviewpageContent">
 

@@ -6,7 +6,6 @@ function TutorPage() {
 
     return (
         <div className="Tutorpage">
-            <NavBar ></NavBar>
             <div className="TutorpageContent">
                 <TutorList></TutorList>
             </div>

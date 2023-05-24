@@ -3,7 +3,6 @@ import NavBar from '../Homepage/NavBar/NavBar';
 import { NavLink } from 'react-router-dom';
 function AboutUs() {
     return (<div className="AboutUsPage">
-        <NavBar></NavBar>
         <h1 className='AboutUsH1'>Почему именно мы?</h1>
         <div className='AboutUsPageInfo'>
 
